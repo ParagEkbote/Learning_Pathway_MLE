@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    .mermaid-container {
+      width: 500px;
+      height: 500px;
+      overflow: auto;
+    }
+    .mermaid {
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <button id="zoom-in">Zoom In</button>
+  <button id="zoom-out">Zoom Out</button>
+  <button id="zoom-left">Zoom Left</button>
+  <button id="zoom-right">Zoom Right</button>
+  <button id="zoom-up">Zoom Up</button>
+  <button id="zoom-down">Zoom Down</button>
+  <div class="mermaid-container">
+    <div class="mermaid">
+graph TD;
+    A[Computer Science Fundamentals] --> B[Programming Basics];
+    A --> C[Data Structures & Algorithms DSA];
+    A --> D[Discrete Mathematics];
+    A --> BA[Computer Architecture];
+
+    B --> E[Object-Oriented Programming OOP];
+    B --> F[Functional Programming FP];
+    C --> G[Algorithm Design & Analysis];
+    D --> H[Probability & Statistics];
+    BA --> BB[Operating Systems OS];
+
+    E --> I[Software Engineering SE];
+    F --> I;
+    G --> J[Optimization Techniques];
+    H --> K[Linear Algebra];
+    BB --> BC[Parallel & Distributed Systems];
+
+    I --> L[Database Systems];
+    J --> M[Machine Learning Foundations ML];
+    K --> M;
+    BC --> N[Big Data Processing];
+
+    L --> N;
+    M --> O[Supervised Learning];
+    M --> P[Unsupervised Learning];
+    M --> Q[Reinforcement Learning RL];
+
+    N --> R[Distributed Computing];
+    O --> S[Classification Algorithms];
+    O --> T[Regression Algorithms];
+    P --> U[Clustering Algorithms];
+    P --> V[Dimensionality Reduction PCA, t-SNE];
+    Q --> W[Q-Learning];
+    Q --> X[Policy Gradient Methods];
+
+    R --> Y[Deep Learning Foundations DL];
+    S --> Y;
+    T --> Y;
+    U --> Y;
+    V --> Y;
+    W --> Y;
+    X --> Y;
+
+    Y --> Z[Neural Network Architectures NN];
+    Y --> AA[Backpropagation & Optimization];
+    Y --> AB[Regularization Techniques L1, L2];
+
+    Z --> AC[Convolutional Neural Networks CNN];
+    Z --> AD[Recurrent Neural Networks RNN];
+    Z --> AE[Transformer Architecture];
+    AA --> AF[Gradient Descent Variants SGD, Adam];
+    AB --> AG[Dropout & Batch Normalization BN];
+
+    AC --> AH[Computer Vision CV];
+    AD --> AI[Natural Language Processing NLP];
+    AE --> AI;
+    AF --> AJ[Model Training & Tuning];
+    AG --> AJ;
+
+    AH --> AK[Generative AI Foundations GenAI];
+    AI --> AK;
+    AJ --> AK;
+
+    AK --> AL[Variational Autoencoders VAE];
+    AK --> AM[Generative Adversarial Networks GAN];
+    AK --> AN[Diffusion Models];
+    AK --> AO[Large Language Models LLM];
+
+    AL --> AP[Image Generation];
+    AM --> AP;
+    AN --> AP;
+    AN --> AQ[Text-to-Image Models DALL-E, Stable Diffusion];
+    AO --> AR[Text Generation GPT];
+    AO --> AS[Text-to-Text Translation];
+    AO --> AT[Few-Shot Learning];
+
+    AP --> AU[Creative AI Applications];
+    AQ --> AU;
+    AR --> AV[Conversational AI Chatbots];
+    AS --> AV;
+    AT --> AW[AI Agents];
+
+    AU --> AX[Generative AI Ethics & Responsible Use];
+    AV --> AX;
+    AW --> AX;
+
+    %% New nodes and connections;
+    BA --> BD[Computer Networks];
+    BD --> BE[Cloud Computing];
+    BE --> R;
+    BB --> BF[Information Security];
+    BF --> BG[Cryptography];
+    BG --> BH[Blockchain Technology];
+    L --> BI[Data Mining];
+    BI --> BJ[Knowledge Discovery];
+    BJ --> BK[Recommender Systems];
+    M --> BL[Evolutionary Algorithms];
+    BL --> BM[Genetic Programming];
+    Y --> BN[Graph Neural Networks GNN];
+    BN --> BO[Social Network Analysis];
+    AH --> BP[Augmented Reality AR];
+    AH --> BQ[Virtual Reality VR];
+    AI --> BR[Speech Recognition];
+    AI --> BS[Machine Translation];
+    AK --> BT[Federated Learning];
+    BT --> BU[Privacy-Preserving AI];
+    AX --> BV[AI Governance];
+    BV --> BW[AI Policy and Regulation]
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      mermaid.initialize({ startOnLoad: true });
+
+      let zoomLevel = 1;
+      let xOffset = 0;
+      let yOffset = 0;
+      const diagram = document.querySelector('.mermaid');
+      const zoomInButton = document.querySelector('#zoom-in');
+      const zoomOutButton = document.querySelector('#zoom-out');
+      const zoomLeftButton = document.querySelector('#zoom-left');
+      const zoomRightButton = document.querySelector('#zoom-right');
+      const zoomUpButton = document.querySelector('#zoom-up');
+      const zoomDownButton = document.querySelector('#zoom-down');
+
+      zoomInButton.addEventListener('click', function() {
+        zoomLevel += 0.25;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+
+      zoomOutButton.addEventListener('click', function() {
+        zoomLevel -= 0.25;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+
+      zoomLeftButton.addEventListener('click', function() {
+        xOffset -= 50;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+
+      zoomRightButton.addEventListener('click', function() {
+        xOffset += 50;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+
+      zoomUpButton.addEventListener('click', function() {
+        yOffset -= 50;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+
+      zoomDownButton.addEventListener('click', function() {
+        yOffset += 50;
+        diagram.style.transform = `translate(${xOffset}px, ${yOffset}px) scale(${zoomLevel})`;
+      });
+    });
+  </script>
+</body>
+</html>
