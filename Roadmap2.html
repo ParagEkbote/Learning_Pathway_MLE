@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Roadmaps for MLE/CSE</title>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <style>
+        #graph-container {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+        #mermaid-graph {
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0;
+        }
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for contrast */
+          }
+          h1 {
+            margin-bottom: 20px;
+            color: #333;
+          }
+          .mermaid-container {
+            position: relative;
+            display: inline-block;
+            width: 50%;
+            max-width: 1000px; /* Adjust based on your preference */
+            height: 500px; /* Fixed height for scrolling */
+            overflow: auto; /* Enable scrolling */
+            text-align: center;
+            background: rgb(129, 179, 214); /* Background for better contrast */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin:10%; /* Center the container */
+          }
+          .mermaid {
+            max-width: 100%; /* Allow the diagram to exceed container width */
+            height: fit-content; /* Allow the diagram to adjust its height */
+          }
+        </style>
+      </head>
+      <body>
+        <h1><b>Roadmaps for Machine Learning Engineering (MLE) / Computer Science Engineering (CSE)</b></h1>
+        <h2>1. The Essential Map from CS-ML-DL-GenAI</h2>
+        <div class="mermaid-container">
+            <button onclick="zoomIn()">Zoom In</button>
+            <button onclick="zoomOut()">Zoom Out</button>
+            <button onclick="resetZoom()">Reset Zoom</button>
+          <div class="mermaid">
+            graph TD;
+            A[Computer Science Fundamentals] --> B[Programming Basics];
+            A --> C[Data Structures];
+            A --> D[Algorithms];
+            A --> E[Computer Architecture];
+            
+            B --> BA[Variables and Data Types];
+            B --> BB[Control Structures];
+            B --> BC[Functions and Modules];
+            B --> BD[File I/O];
+            B --> F[Object-Oriented Programming];
+            B --> G[Functional Programming];
+            
+            F --> FA[Classes and Objects];
+            F --> FB[Inheritance];
+            F --> FC[Polymorphism];
+            F --> FD[Encapsulation];
+            
+            G --> GA[First-class Functions];
+            G --> GB[Pure Functions];
+            G --> GC[Recursion];
+            G --> GD[Lazy Evaluation];
+            
+            C --> H[Arrays and Linked Lists];
+            C --> I[Trees and Graphs];
+            C --> J[Hash Tables];
+            C --> CA[Stacks and Queues];
+            C --> CB[Heaps];
+            C --> CC[Tries];
+            
+            D --> K[Sorting Algorithms];
+            D --> L[Search Algorithms];
+            D --> M[Dynamic Programming];
+            D --> DA[Greedy Algorithms];
+            D --> DB[Graph Algorithms];
+            D --> DC[String Algorithms];
+            
+            K --> KA[Quicksort];
+            K --> KB[Mergesort];
+            K --> KC[Heapsort];
+            
+            L --> LA[Binary Search];
+            L --> LB[Depth-First Search];
+            L --> LC[Breadth-First Search];
+            
+            E --> N[CPU Architecture];
+            E --> O[Memory Hierarchy];
+            E --> EA[Instruction Set Architecture];
+            E --> EB[Pipelining];
+            E --> EC[Caching];
+            E --> ED[Virtual Memory];
+            
+            P[Mathematics for CS] --> Q[Linear Algebra];
+            P --> R[Calculus];
+            P --> S[Probability and Statistics];
+            P --> T[Discrete Mathematics];
+            
+            Q --> QA[Vectors and Matrices];
+            Q --> QB[Eigenvalues and Eigenvectors];
+            Q --> QC[Matrix Decomposition];
+            
+            R --> RA[Differentiation];
+            R --> RB[Integration];
+            R --> RC[Multivariate Calculus];
+            
+            S --> SA[Descriptive Statistics];
+            S --> SB[Inferential Statistics];
+            S --> SC[Bayesian Statistics];
+            
+            T --> TA[Set Theory];
+            T --> TB[Graph Theory];
+            T --> TC[Combinatorics];
+            T --> TD[Logic and Proofs];
+            
+            U[Software Engineering] --> V[Version Control];
+            U --> W[Software Design Patterns];
+            U --> X[Agile Methodologies];
+            U --> UA[Testing and Debugging];
+            U --> UB[Code Review];
+            U --> UC[Continuous Integration/Deployment];
+            
+            Y[Database Systems] --> Z[SQL];
+            Y --> AA[NoSQL];
+            Y --> AB[Data Warehousing];
+            Y --> YA[ACID Properties];
+            Y --> YB[Indexing and Query Optimization];
+            Y --> YC[Transactions and Concurrency];
+            
+            AC[Web Development] --> AD[Frontend Development];
+            AC --> AE[Backend Development];
+            AC --> AF[RESTful APIs];
+            AC --> ACA[Web Security];
+            AC --> ACB[Scalability and Load Balancing];
+            AC --> ACC[Microservices Architecture];
+            
+            AD --> ADA[HTML/CSS];
+            AD --> ADB[JavaScript];
+            AD --> ADC[Frontend Frameworks];
+            
+            AE --> AEA[Server-side Programming];
+            AE --> AEB[Databases];
+            AE --> AEC[Authentication and Authorization];
+            
+            AG[Machine Learning Fundamentals] --> AH[Supervised Learning];
+            AG --> AI[Unsupervised Learning];
+            AG --> AJ[Reinforcement Learning];
+            AG --> AGA[Bias-Variance Tradeoff];
+            AG --> AGB[Overfitting and Underfitting];
+            AG --> AGC[Cross-Validation];
+            
+            AH --> AK[Classification];
+            AH --> AL[Regression];
+            
+            AK --> AKA[Logistic Regression];
+            AK --> AKB[Decision Trees];
+            AK --> AKC[Support Vector Machines];
+            
+            AL --> ALA[Linear Regression];
+            AL --> ALB[Polynomial Regression];
+            AL --> ALC[Ridge and Lasso Regression];
+            
+            AI --> AM[Clustering];
+            AI --> AN[Dimensionality Reduction];
+            
+            AM --> AMA[K-Means];
+            AM --> AMB[Hierarchical Clustering];
+            AM --> AMC[DBSCAN];
+            
+            AN --> ANA[Principal Component Analysis];
+            AN --> ANB[t-SNE];
+            AN --> ANC[Autoencoders];
+            
+            AJ --> AO[Q-Learning];
+            AJ --> AP[Policy Gradients];
+            AJ --> AJA[Monte Carlo Methods];
+            AJ --> AJB[Temporal Difference Learning];
+            
+            AW[Feature Engineering] --> AX[Feature Selection];
+            AW --> AY[Feature Extraction];
+            AW --> AZ[Feature Scaling];
+            AW --> AWA[Feature Encoding];
+            AW --> AWB[Handling Missing Data];
+            AW --> AWC[Feature Interaction];
+            
+            BA[Model Evaluation] --> BB[Cross-Validation];
+            BA --> BC[Confusion Matrix];
+            BA --> BD[ROC Curve];
+            BA --> BE[Precision-Recall];
+            BA --> BAA[F1 Score];
+            BA --> BAB[Mean Squared Error];
+            BA --> BAC[R-squared];
+            
+            BF[Deep Learning] --> BG[Neural Network Basics];
+            BF --> BH[Activation Functions];
+            BF --> BI[Backpropagation];
+            BF --> BJ[Optimization Algorithms];
+            BF --> BFA[Regularization Techniques];
+            BF --> BFB[Batch Normalization];
+            BF --> BFC[Transfer Learning];
+            
+            BG --> BGA[Perceptrons];
+            BG --> BGB[Multi-layer Perceptrons];
+            BG --> BGC[Loss Functions];
+            
+            BH --> BHA[ReLU];
+            BH --> BHB[Sigmoid];
+            BH --> BHC[Tanh];
+            
+            BJ --> BJA[Gradient Descent];
+            BJ --> BJB[Adam];
+            BJ --> BJC[RMSprop];
+            
+            BK[Deep Learning Architectures] --> BL[Convolutional Neural Networks];
+            BK --> BM[Recurrent Neural Networks];
+            BK --> BN[Long Short-Term Memory];
+            BK --> BO[Transformers];
+            BK --> BKA[Autoencoders];
+            BK --> BKB[Generative Adversarial Networks];
+            
+            BL --> BLA[Convolution Layers];
+            BL --> BLB[Pooling Layers];
+            BL --> BLC[CNN Architectures];
+            
+            BM --> BMA[Vanishing Gradient Problem];
+            BM --> BMB[Bidirectional RNNs];
+            BM --> BMC[Gated Recurrent Units];
+            
+            BO --> BOA[Self-Attention];
+            BO --> BOB[Multi-Head Attention];
+            BO --> BOC[Positional Encoding];
+            
+            BP[Computer Vision] --> BQ[Image Classification];
+            BP --> BR[Object Detection];
+            BP --> BS[Image Segmentation];
+            BP --> BPA[Face Recognition];
+            BP --> BPB[Image Generation];
+            BP --> BPC[Style Transfer];
+            
+            BT[Natural Language Processing] --> BU[Text Classification];
+            BT --> BV[Named Entity Recognition];
+            BT --> BW[Machine Translation];
+            BT --> BX[Sentiment Analysis];
+            BT --> BTA[Text Generation];
+            BT --> BTB[Question Answering];
+            BT --> BTC[Text Summarization];
+            
+            BY[Generative AI] --> BZ[Generative Adversarial Networks];
+            BY --> CA[Variational Autoencoders];
+            BY --> CB[Diffusion Models];
+            BY --> CC[Large Language Models];
+            BY --> BYA[Text-to-Image Models];
+            BY --> BYB[Voice Synthesis];
+            BY --> BYC[Music Generation];
+            
+            BZ --> BZA[Generator];
+            BZ --> BZB[Discriminator];
+            BZ --> BZC[GAN Training];
+            
+            CB --> CBA[Forward Diffusion];
+            CB --> CBB[Reverse Diffusion];
+            CB --> CBC[Noise Scheduling];
+            
+            CC --> CCA[Transformer-based Models];
+            CC --> CCB[Few-shot Learning];
+            CC --> CCC[Prompt Engineering];
+            
+            CD[Ethical AI] --> CE[Bias and Fairness];
+            CD --> CF[Explainable AI];
+            CD --> CG[AI Safety];
+            CD --> CDA[Privacy and Data Protection];
+            CD --> CDB[Accountability];
+            CD --> CDC[Transparency];
+            
+            CH[MLOps] --> CI[Model Deployment];
+            CH --> CJ[Model Monitoring];
+            CH --> CK[Model Versioning];
+            CH --> CHA[Data Pipeline Management];
+            CH --> CHB[A/B Testing];
+            CH --> CHC[Model Interpretability];
+        </div>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+
+        function zoomIn() {
+            const graph = document.getElementById('mermaid-graph');
+            let scale = parseFloat(getComputedStyle(graph).transform.split(',')[3]) || 1;
+            scale += 5.0;
+            graph.style.transform = `scale(${scale})`;
+        }
+
+        function zoomOut() {
+            const graph = document.getElementById('mermaid-graph');
+            let scale = parseFloat(getComputedStyle(graph).transform.split(',')[3]) || 1;
+            scale -= 5.0;
+            scale = Math.max(scale, 0.1); // Prevent zooming out too far
+            graph.style.transform = `scale(${scale})`;
+        }
+
+        function resetZoom() {
+            const graph = document.getElementById('mermaid-graph');
+            graph.style.transform = 'scale(1)';
+        }
+    </script>
+</body>
+</html>
+
+
