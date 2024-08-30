@@ -1,68 +1,67 @@
 <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Roadmaps for MLE/CSE</title>
-        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-        <style>
-        #graph-container {
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            position: relative;
-        }
-        #mermaid-graph {
-            width: 100%;
-            height: 100%;
-            transform-origin: 0 0;
-        }
-          body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4; /* Light background for contrast */
-          }
-          h1 {
-            margin-bottom: 20px;
-            color: #333;
-          }
-          .mermaid-container {
-            position: relative;
-            display: inline-block;
-            width: 50%;
-            max-width: 1000px; /* Adjust based on your preference */
-            height: 500px; /* Fixed height for scrolling */
-            overflow: auto; /* Enable scrolling */
-            text-align: center;
-            background: rgb(129, 179, 214); /* Background for better contrast */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin:10%; /* Center the container */
-          }
-          .mermaid {
-            max-width: 100%; /* Allow the diagram to exceed container width */
-            height: fit-content; /* Allow the diagram to adjust its height */
-          }
-        </style>
-      </head>
-      <body>
-        <h1><b>Roadmaps for Machine Learning Engineering (MLE) / Computer Science Engineering (CSE)</b></h1>
-        <h2>1. The Essential Map from CS-ML-DL-GenAI</h2>
-        <div class="mermaid-container">
-            <button onclick="zoomIn()">Zoom In</button>
-            <button onclick="zoomOut()">Zoom Out</button>
-            <button onclick="resetZoom()">Reset Zoom</button>
-          <div class="mermaid">
-            graph TD;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmaps for MLE/CSE</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the compiled CSS -->
+  <style>
+    #graph-container {
+      width: 50%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+    #mermaid-graph {
+      width: 100%;
+      height: 100%;
+      transform-origin: 0 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .mermaid-container {
+      position: relative;
+      display: inline-block;
+      width: 75%;
+      max-width: 750px;
+      height: 500px;
+      overflow: auto;
+      text-align: center;
+      background: rgb(129, 179, 214);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10%;
+    }
+    .mermaid {
+      max-width: 100%;
+      height: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <h1><b>Roadmaps for ML/CS</b></h1>
+  <button class="zoom-button" id="zoom-in">Zoom In</button>
+  <button class="zoom-button" id="zoom-out">Zoom Out</button>
+  <button class="zoom-button" id="reset-zoom">Reset Zoom</button>
+  <div class="mermaid-container">
+    <div id="mermaid-graph" class="mermaid">
+      graph TD;
             A[Computer Science Fundamentals] --> B[Programming Basics];
             A --> C[Data Structures];
             A --> D[Algorithms];
             A --> E[Computer Architecture];
-            
             B --> BA[Variables and Data Types];
             B --> BB[Control Structures];
             B --> BC[Functions and Modules];
@@ -296,31 +295,36 @@
             CH --> CHA[Data Pipeline Management];
             CH --> CHB[A/B Testing];
             CH --> CHC[Model Interpretability];
-        </div>
-    <script>
-        mermaid.initialize({ startOnLoad: true });
+    </div>
+  </div>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
 
-        function zoomIn() {
-            const graph = document.getElementById('mermaid-graph');
-            let scale = parseFloat(getComputedStyle(graph).transform.split(',')[3]) || 1;
-            scale += 5.0;
-            graph.style.transform = `scale(${scale})`;
-        }
+    const graph = document.getElementById('mermaid-graph');
+    const zoomInButton = document.getElementById('zoom-in');
+    const zoomOutButton = document.getElementById('zoom-out');
+    const resetZoomButton = document.getElementById('reset-zoom');
 
-        function zoomOut() {
-            const graph = document.getElementById('mermaid-graph');
-            let scale = parseFloat(getComputedStyle(graph).transform.split(',')[3]) || 1;
-            scale -= 5.0;
-            scale = Math.max(scale, 0.1); // Prevent zooming out too far
-            graph.style.transform = `scale(${scale})`;
-        }
+    let scale = 1;
+    const zoomStep = 0.1*5.0;
 
-        function resetZoom() {
-            const graph = document.getElementById('mermaid-graph');
-            graph.style.transform = 'scale(1)';
-        }
-    </script>
+    zoomInButton.addEventListener('click', () => {
+      scale += zoomStep;
+      graph.style.transform = `scale(${scale})`;
+    });
+
+    zoomOutButton.addEventListener('click', () => {
+      scale = Math.max(scale - zoomStep, 0.1); // Prevent zooming out too far
+      graph.style.transform = `scale(${scale})`;
+    });
+
+    resetZoomButton.addEventListener('click', () => {
+      scale = 1;
+      graph.style.transform = `scale(1)`;
+    });
+  </script>
 </body>
 </html>
+
 
 

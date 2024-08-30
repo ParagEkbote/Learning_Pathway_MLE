@@ -1,0 +1,24 @@
+$zoom-btn-bg: #333;
+$zoom-btn-color: #fff;
+$zoom-btn-padding: 10px 20px;
+$zoom-btn-margin: 10px;
+$zoom-btn-radius: 10px;
+$zoom-btn-hover-bg: #555;
+
+@mixin zoom-button-styles {
+  background-color: $zoom-btn-bg;
+  color: $zoom-btn-color;
+  padding: $zoom-btn-padding;
+  margin: $zoom-btn-margin;
+  border: none;
+  border-radius: $zoom-btn-radius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $zoom-btn-hover-bg;
+  }
+}
+
+.zoom-button {
+  @include zoom-button-styles;
+}

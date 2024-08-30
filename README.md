@@ -1,7 +1,7 @@
 # Learning_Pathway_MLE
 
 # Overview
-Welcome to the Machine Learning Engineering (MLE) Learning Pathway. This pathway is designed to equip you with the essential knowledge and practical skills needed to excel as a Machine Learning Engineer. Whether you are transitioning into this role or looking to deepen your expertise, this pathway will guide you through the core concepts, tools, and techniques that are critical for success in the field.
+ This pathway is designed to equip you with the essential knowledge and practical skills needed to excel as a Machine Learning Engineer. 
 
 ## Objectives:
 The primary objectives of this learning pathway are:
