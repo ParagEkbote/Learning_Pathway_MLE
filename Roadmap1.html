@@ -20,11 +20,11 @@
     .mermaid-container {
       position: relative;
       display: inline-block;
-      width: 100%;
+      width: 500%;
       max-width: 1000px; /* Adjust based on your preference */
       height: 700px; /* Fixed height for scrolling */
       overflow: auto; /* Enable scrolling */
-      text-align: left;
+      text-align: center;
       background: white; /* Background for better contrast */
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -33,14 +33,16 @@
       margin: 0 auto; /* Center the container */
     }
     .mermaid {
-      max-width: none; /* Allow the diagram to exceed container width */
+      max-width: 100%; /* Allow the diagram to exceed container width */
       height: auto; /* Allow the diagram to adjust its height */
     }
   </style>
 </head>
 <body>
   <h1><b>Roadmaps for Machine Learning Engineering (MLE) / Computer Science Engineering (CSE)</b></h1>
-  <h2>1. The Essential Map from CS-ML-DL-GenAI</h2>
+  <button class="zoom-button" id="zoom-in">Zoom In</button>
+  <button class="zoom-button" id="zoom-out">Zoom Out</button>
+  <button class="zoom-button" id="reset-zoom">Reset Zoom</button>
   <div class="mermaid-container">
     <div class="mermaid">
       graph TD;
@@ -154,6 +156,32 @@
         BV --> BW[AI Policy and Regulation]
     </div>
   </div>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+
+    const graph = document.getElementById('mermaid-graph');
+    const zoomInButton = document.getElementById('zoom-in');
+    const zoomOutButton = document.getElementById('zoom-out');
+    const resetZoomButton = document.getElementById('reset-zoom');
+
+    let scale = 1;
+    const zoomStep = 0.1*5.0;
+
+    zoomInButton.addEventListener('click', () => {
+      scale += zoomStep;
+      graph.style.transform = `scale(${scale})`;
+    });
+
+    zoomOutButton.addEventListener('click', () => {
+      scale = Math.max(scale - zoomStep, 0.1); // Prevent zooming out too far
+      graph.style.transform = `scale(${scale})`;
+    });
+
+    resetZoomButton.addEventListener('click', () => {
+      scale = 1;
+      graph.style.transform = `scale(1)`;
+    });
+  </script>
 </body>
 </html>
 
