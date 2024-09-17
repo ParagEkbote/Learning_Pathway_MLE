@@ -1,7 +1,7 @@
 # Learning_Pathway_MLE
 
 # Overview
- This pathway is designed to equip you with the essential knowledge and practical skills needed to excel as a Machine Learning Engineer. 
+ This pathway is designed to equip you with the essential knowledge and practical skills needed to excel as a Machine Learning Engineer.  The .html files contains the reference maps that can be viewed using this website:
 
 ## Objectives:
 The primary objectives of this learning pathway are:
@@ -25,8 +25,3 @@ Understand the end-to-end process of deploying machine learning models into prod
 ## Ethics and Best Practices:
 
 Explore the ethical considerations in machine learning, including fairness, transparency, and bias. You'll learn how to build models responsibly and in accordance with industry best practices.
-
-## Advanced Topics: 
-
-Delve into advanced topics such as deep learning, natural language processing, computer vision, and reinforcement learning. You'll also explore the latest trends and research in the field.
-
